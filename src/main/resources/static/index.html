@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SkillBridge-Learning and Career Dvelopment Platform </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+</button>
+
+<body>
+    <div style="text-align:center; margin-top:20px;">
+
+<button onclick="window.location.href='dashboard.html'"
+style="
+padding:10px 20px;
+background:#667eea;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;">
+← Back to Dashboard
+</button>
+
+</div>
+
+<h1 style="color:white; text-align:center;">
+    SkillBridge-Learning and Career Dvelopment Platform
+</h1>
+
+<p style="color:white; text-align:center;">
+    Choose your dream career and get a complete learning roadmap
+</p>
+
+<h3 style="color:white; text-align:center;">
+    Select Your Career Goal
+
+<br><br>
+
+<div id="comparisonSection" style="display:none;">
+</div>
+
+<select id="goalSelect">
+    <option value="">Select Career Goal</option>
+    <option value="java">Java Full Stack Developer</option>
+    <option value="dataanalyst">Data Analyst</option>
+    <option value="datascientist">Data Scientist</option>
+    <option value="devops">DevOps Engineer</option>
+    <option value="cyber">Cybersecurity Analyst</option>
+</select>
+
+<div id="content"></div>
+
+<script>
+    
+
+document.getElementById("goalSelect").addEventListener("change", function() {
+
+    let value = this.value;
+    let content = document.getElementById("content");
+
+    if(value === "java") {
+        content.innerHTML = `
+            <div class="goal-title">Java Full Stack Developer</div>
+
+            <h3>Skills</h3>
+            <ul>
+                <li>Core Java</li>
+                <li>Spring Boot</li>
+                <li>MySQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+
+            <h3>Roadmap</h3>
+            <h3>Learning Roadmap</h3>
+
+<div class="tab-card">
+    <b>Phase 1 - Programming Fundamentals</b>
+    <p>Core Java, OOP Concepts, Collections, Exception Handling</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 2 - Database Management</b>
+    <p>SQL, MySQL, Database Design, Queries</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 3 - Backend Development</b>
+    <p>Spring Boot, REST APIs, Maven, JPA</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 4 - Frontend Development</b>
+    <p>HTML, CSS, JavaScript, React</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 5 - Project Development</b>
+    <p>Build Full Stack Projects and Deploy Applications</p>
+</div>
+            
+
+            <h3>Books</h3>
+            <ul>
+                <li>Head First Java</li>
+                <li>Effective Java</li>
+            </ul>
+
+<h3>Practice Platforms</h3>
+<ul>
+<li>LeetCode</li>
+<li>HackerRank</li>
+<li>GeeksforGeeks</li>
+</ul>
+        `;
+    }
+
+    else if(value === "dataanalyst") {
+        content.innerHTML = `
+            <div class="goal-title">Data Analyst</div>
+
+            <h3>Skills</h3>
+            <ul>
+                <li>Excel</li>
+                <li>SQL</li>
+                <li>Python</li>
+                <li>Power BI</li>
+                <li>Statistics</li>
+            </ul>
+
+            <h3>Roadmap</h3>
+            <h3>Learning Roadmap</h3>
+
+<div class="tab-card">
+    <b>Phase 1 - Excel Fundamentals</b>
+    <p>Excel Formulas, Pivot Tables, Data Cleaning</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 2 - Database Skills</b>
+    <p>SQL Queries, Joins, Database Management</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 3 - Programming</b>
+    <p>Python Basics, Pandas, NumPy</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 4 - Visualization</b>
+    <p>Power BI, Dashboards, Reports</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 5 - Analytics Projects</b>
+    <p>Sales Analysis, Business Insights, Portfolio Projects</p>
+</div>
+
+            <h3>Books</h3>
+            <ul>
+                <li>Storytelling with Data</li>
+                <li>Data Analytics Made Accessible</li>
+            </ul>
+            <h3>Practice Platforms</h3>
+<ul>
+    <li>Kaggle</li>
+    <li>HackerRank SQL</li>
+    <li>DataCamp</li>
+    <li>LeetCode SQL</li>
+</ul>
+        `;
+    }
+
+    else if(value === "datascientist") {
+        content.innerHTML = `
+            <div class="goal-title">Data Scientist</div>
+
+            <h3>Skills</h3>
+            <ul>
+                <li>Python</li>
+                <li>Statistics</li>
+                <li>Machine Learning</li>
+                <li>Deep Learning</li>
+                <li>Artificial Intelligence</li>
+            </ul>
+
+            <h3>Roadmap</h3>
+            <h3>Learning Roadmap</h3>
+
+<div class="tab-card">
+    <b>Phase 1 - Python Programming</b>
+    <p>Python Basics, Functions, OOP Concepts</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 2 - Mathematics & Statistics</b>
+    <p>Probability, Statistics, Linear Algebra</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 3 - Data Analysis</b>
+    <p>Pandas, NumPy, Data Visualization</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 4 - Machine Learning</b>
+    <p>Regression, Classification, Model Building</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 5 - AI Projects</b>
+    <p>Deep Learning, NLP, Real-World Projects</p>
+</div>
+
+            <h3>Books</h3>
+            <ul>
+                <li>Hands-On Machine Learning</li>
+                <li>Python for Data Analysis</li>
+            </ul>
+            <h3>Practice Platforms</h3>
+<ul>
+    <li>Kaggle</li>
+    <li>DataCamp</li>
+    <li>LeetCode</li>
+    <li>Google Colab</li>
+</ul>
+        `;
+    }
+
+    else if(value === "devops") {
+        content.innerHTML = `
+            <div class="goal-title">DevOps Engineer</div>
+
+            <h3>Skills</h3>
+            <ul>
+                <li>Linux</li>
+                <li>Git</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>AWS</li>
+                <li>CI/CD</li>
+            </ul>
+
+            <h3>Roadmap</h3>
+            <h3>Learning Roadmap</h3>
+
+<div class="tab-card">
+    <b>Phase 1 - Linux Fundamentals</b>
+    <p>Linux Commands, Shell Scripting</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 2 - Version Control</b>
+    <p>Git, GitHub, Branching Strategies</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 3 - Containerization</b>
+    <p>Docker Images, Containers, Docker Compose</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 4 - Orchestration & Cloud</b>
+    <p>Kubernetes, AWS Services</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 5 - CI/CD & Deployment</b>
+    <p>Jenkins, GitHub Actions, Automation</p>
+</div>
+
+            <h3>Books</h3>
+            <ul>
+                <li>The DevOps Handbook</li>
+                <li>Docker Deep Dive</li>
+            </ul>
+            <h3>Practice Platforms</h3>
+<ul>
+    <li>Killercoda</li>
+    <li>Play with Docker</li>
+    <li>AWS Skill Builder</li>
+    <li>GitHub</li>
+</ul>
+        `;
+    }
+
+    else if(value === "cyber") {
+        content.innerHTML = `
+            <div class="goal-title">Cybersecurity Analyst</div>
+
+            <h3>Skills</h3>
+            <ul>
+                <li>Networking</li>
+                <li>Linux</li>
+                <li>Ethical Hacking</li>
+                <li>Penetration Testing</li>
+                <li>Security Fundamentals</li>
+            </ul>
+
+            <h3>Roadmap</h3>
+            <h3>Learning Roadmap</h3>
+
+<div class="tab-card">
+    <b>Phase 1 - Networking Basics</b>
+    <p>TCP/IP, DNS, Routing, Switching</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 2 - Operating Systems</b>
+    <p>Linux Administration, Windows Security</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 3 - Security Fundamentals</b>
+    <p>Cryptography, Firewalls, Risk Management</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 4 - Ethical Hacking</b>
+    <p>Vulnerability Assessment, Penetration Testing</p>
+</div>
+
+<div class="tab-card">
+    <b>Phase 5 - Security Projects</b>
+    <p>Capture The Flag Challenges, Security Audits</p>
+</div>
+
+            <h3>Books</h3>
+            <ul>
+                <li>Cybersecurity Essentials</li>
+                <li>CEH Guide</li>
+            </ul>
+            <h3>Practice Platforms</h3>
+<ul>
+    <li>TryHackMe</li>
+    <li>Hack The Box</li>
+    <li>PortSwigger Web Security Academy</li>
+    <li>PicoCTF</li>
+</ul>
+ 
+        `;
+    }
+
+});
+
+</script>
+<hr>
+
+<p style="text-align:center;color:white;">
+SkillBridge-Learning and Career Dvelopment Platform © 2026
+</p>
+
+</body>
+</html>

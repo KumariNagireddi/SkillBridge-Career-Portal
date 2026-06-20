@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Bridge - Login</title>
+
+```
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#26db0a,#2193b0);
+    }
+
+    .login-container{
+        background:white;
+        width:400px;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h1{
+        text-align:center;
+        color:#2c3e50;
+        margin-bottom:10px;
+    }
+
+    h3{
+        text-align:center;
+        color:#666;
+        margin-bottom:25px;
+    }
+
+    input{
+        width:100%;
+        padding:12px;
+        margin:10px 0;
+        border:1px solid #ccc;
+        border-radius:8px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        margin-top:10px;
+        background:#2193b0;
+        color:white;
+        border:none;
+        border-radius:8px;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#176d85;
+    }
+
+    p{
+        text-align:center;
+        margin-top:15px;
+    }
+
+    a{
+        color:#2193b0;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+```
+<h1>Skill Bridge</h1>
+
+<h3>Login</h3>
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>
+    New User?
+    <a href="register.html">Register Here</a>
+</p>
+```
+
+</div>
+
+<script>
+
+async function login() {
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let user = {
+        username: username,
+        password: password
+    };
+
+    let response = await fetch("/users/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    });
+
+    let result = await response.text();
+
+    if(result === "SUCCESS") {
+
+        window.location.href = "dashboard.html";
+
+    } else {
+
+        alert("Invalid Username or Password");
+    }
+}
+
+</script>
+
+</body>
+</html>

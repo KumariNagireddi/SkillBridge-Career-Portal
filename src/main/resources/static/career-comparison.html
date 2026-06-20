@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Career Comparison</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+}
+
+h1{
+    text-align:center;
+    color:#2c3e50;
+}
+
+select{
+    padding:10px;
+    width:250px;
+    margin:10px;
+}
+
+button{
+    padding:10px 20px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+}
+
+table, th, td{
+    border:1px solid #ddd;
+}
+
+th{
+    background:#667eea;
+    color:white;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+}
+
+.recommendation{
+    margin-top:20px;
+    padding:15px;
+    background:#f4f4f4;
+    border-left:5px solid green;
+}
+
+</style>
+
+</head>
+
+<body>
+    <body>
+
+<div style="text-align:center; margin-top:20px;">
+
+<button onclick="window.location.href='dashboard.html'"
+style="
+padding:10px 20px;
+background:#667eea;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;">
+← Back to Dashboard
+</button>
+
+</div>
+
+<div class="container">
+
+<h1>Career Comparison</h1>
+
+<center>
+
+<select id="career1">
+<option>Java Full Stack Developer</option>
+<option>Data Analyst</option>
+<option>Data Scientist</option>
+<option>DevOps Engineer</option>
+<option>Cybersecurity Analyst</option>
+</select>
+
+<select id="career2">
+<option>Java Full Stack Developer</option>
+<option>Data Analyst</option>
+<option>Data Scientist</option>
+<option>DevOps Engineer</option>
+<option>Cybersecurity Analyst</option>
+</select>
+
+<br><br>
+
+<button onclick="compareCareer()">
+Compare Careers
+</button>
+
+</center>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function compareCareer() {
+
+    const careers = {
+
+        "Java Full Stack Developer": {
+            difficulty: "Medium",
+            time: "6 Months",
+            salary: "₹6-12 LPA",
+            demand: "High"
+        },
+
+        "Data Analyst": {
+            difficulty: "Medium",
+            time: "4-6 Months",
+            salary: "₹5-10 LPA",
+            demand: "High"
+        },
+
+        "Data Scientist": {
+            difficulty: "High",
+            time: "8-12 Months",
+            salary: "₹8-20 LPA",
+            demand: "Very High"
+        },
+
+        "DevOps Engineer": {
+            difficulty: "High",
+            time: "6-9 Months",
+            salary: "₹7-15 LPA",
+            demand: "Very High"
+        },
+
+        "Cybersecurity Analyst": {
+            difficulty: "Medium",
+            time: "6-8 Months",
+            salary: "₹6-14 LPA",
+            demand: "High"
+        }
+
+    };
+
+    let c1 = document.getElementById("career1").value;
+    let c2 = document.getElementById("career2").value;
+
+    let career1 = careers[c1];
+    let career2 = careers[c2];
+
+    let recommendedCareer = "";
+    let recommendation = "";
+
+    if(c1 === "Data Scientist" || c2 === "Data Scientist"){
+
+        recommendedCareer = "Data Scientist";
+        recommendation = "Higher salary, strong demand, AI and Machine Learning opportunities.";
+
+    }
+    else if(c1 === "DevOps Engineer" || c2 === "DevOps Engineer"){
+
+        recommendedCareer = "DevOps Engineer";
+        recommendation = "Excellent cloud career opportunities and very high market demand.";
+
+    }
+    else if(c1 === "Java Full Stack Developer" || c2 === "Java Full Stack Developer"){
+
+        recommendedCareer = "Java Full Stack Developer";
+        recommendation = "Best choice for faster placement and software development careers.";
+
+    }
+    else if(c1 === "Cybersecurity Analyst" || c2 === "Cybersecurity Analyst"){
+
+        recommendedCareer = "Cybersecurity Analyst";
+        recommendation = "Growing demand with excellent security-focused career opportunities.";
+
+    }
+    else{
+
+        recommendedCareer = "Data Analyst";
+        recommendation = "Great entry point into analytics and business intelligence careers.";
+
+    }
+
+    document.getElementById("result").innerHTML = `
+
+    <table>
+
+        <tr>
+            <th>Feature</th>
+            <th>${c1}</th>
+            <th>${c2}</th>
+        </tr>
+
+        <tr>
+            <td>Difficulty</td>
+            <td>${career1.difficulty}</td>
+            <td>${career2.difficulty}</td>
+        </tr>
+
+        <tr>
+            <td>Learning Time</td>
+            <td>${career1.time}</td>
+            <td>${career2.time}</td>
+        </tr>
+
+        <tr>
+            <td>Average Salary</td>
+            <td>${career1.salary}</td>
+            <td>${career2.salary}</td>
+        </tr>
+
+        <tr>
+            <td>Demand</td>
+            <td>${career1.demand}</td>
+            <td>${career2.demand}</td>
+        </tr>
+
+    </table>
+
+    <div class="recommendation">
+
+        <h2>🏆 Recommended Career</h2>
+
+        <h3>${recommendedCareer}</h3>
+
+        <p>${recommendation}</p>
+
+    </div>
+
+    `;
+
+}
+
+</script>
+
+</body>
+</html>
